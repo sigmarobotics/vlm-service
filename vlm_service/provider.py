@@ -22,9 +22,9 @@ class GeminiProvider:
     def __init__(self):
         self._client: genai.Client | None = None
         self._api_key: str = ""
-        self._model: str = "gemini-2.0-flash"
+        self._model: str = "gemini-2.5-flash"
 
-    def configure(self, api_key: str, model: str = "gemini-2.0-flash"):
+    def configure(self, api_key: str, model: str = "gemini-2.5-flash"):
         """Configure or reconfigure the Gemini client.
 
         Only recreates the client if api_key or model changed.
@@ -92,7 +92,7 @@ class GeminiProvider:
         if file_parts:
             contents.extend(file_parts)
         contents.append(user_prompt)
-        contents.append(image)
+        contents.append(types.Part.from_bytes(data=image, mime_type="image/jpeg"))
 
         config = types.GenerateContentConfig(
             response_mime_type="application/json",
