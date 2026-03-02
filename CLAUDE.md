@@ -71,7 +71,6 @@ vlm_service/
 ## Gotchas
 
 - **Image bytes must be wrapped**: `types.Part.from_bytes(data=image, mime_type="image/jpeg")` — SDK rejects raw `bytes` in contents list. Mock tests won't catch this.
-- **Model deprecation**: `gemini-2.0-flash` is deprecated. Default model is `gemini-3-flash-preview`.
 
 ## Implementation Plan
 
