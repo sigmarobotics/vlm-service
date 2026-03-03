@@ -37,3 +37,9 @@ result = provider.generate_inspection(
 
 print(result.is_ng, result.analysis, result.raw_result)
 ```
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+Copyright 2026 Sigma Robotics
